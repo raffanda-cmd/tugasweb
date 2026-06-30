@@ -1,0 +1,702 @@
+/* --- RESET & BASE STYLES --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  color: #333;
+  line-height: 1.6;
+}
+
+/* --- STICKY HEADER UI --- */
+.main-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 10%;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.main-header.scrolled {
+  padding: 0.8rem 10%;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #4f46e5;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #4b5563;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: #4f46e5;
+}
+
+/* --- KONTEN HALAMAN (Untuk Demo Scroll) --- */
+.hero {
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #1f2937;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #6b7280;
+}
+
+.tanaman-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.tanaman-header h1 {
+  font-size: 1.8rem;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+/* --- PERBAIKAN: GRID LAYOUT PADA HALAMAN 1 --- */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #f9fafb;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.card h2 {
+  font-size: 1.3rem;
+  color: #1f2937;
+  margin-bottom: 5px;
+}
+
+.card .latin {
+  display: block;
+  font-style: italic;
+  color: #4f46e5;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: #4b5563;
+}
+
+.content-section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  background: white;
+  border-radius: 16px;
+  margin-bottom: 4rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+/* --- GAYA UNTUK FOTO SLIDER / CAROUSEL --- */
+.slider-container {
+  position: relative;
+  max-width: 800px;
+  width: 90%;
+  margin: 20px auto 40px auto;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+
+.slide {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.slide img {
+  width: 100%;
+  display: block;
+  height: 400px; /* Diatur tingginya agar seragam */
+  object-fit: cover;
+}
+
+/* Tombol Navigasi Kanan & Kiri */
+.btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  font-size: 20px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.3s;
+  z-index: 10;
+}
+
+.btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.btn-prev { left: 15px; }
+.btn-next { right: 15px; }
+
+/* --- SEARCH BAR STYLE (Posisi Kanan) --- */
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 260px;
+    flex-shrink: 0;
+}
+
+.search-input {
+    width: 100%;
+    height: 42px;
+    padding: 0.5rem 1rem 0.5rem 2.4rem;
+    background: #fff;
+    color: #1f2937; 
+    border: 1px solid #3f4754;
+    border-radius: 6px;
+    outline: none;
+    transition: .2s;
+}
+
+.search-input::placeholder {
+  color: #8a96a3;
+  font-weight: 400;
+}
+
+.search-input:focus {
+    border-color: #4f46e5;
+    background-color: #fafafa;
+    border-radius: 6px 6px 0 0;
+    box-shadow: none;
+}
+
+.search-icon {
+    position: absolute;
+    left: 12px;
+    color: #8a96a3;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+}
+
+/* --- PREVIEW VIDEO STYLE --- */
+.video-section {
+  text-align: center;
+}
+
+.video-section h2 {
+  margin-bottom: 0.5rem;
+}
+
+.video-section p {
+  margin-bottom: 2rem;
+  color: #6b7280;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  background-color: #000;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* --- UTILITY FOR TOGGLE PAGE --- */
+.hidden {
+  display: none !important;
+}
+
+/* --- SEARCH DROPDOWN COMPONENT --- */
+.search-dropdown {
+    position: absolute;
+    top: calc(100% - 1px);
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid #3f4754;
+    border-top: none;
+    border-radius: 0 0 6px 6px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); 
+    overflow: hidden;
+    z-index: 9999;
+}
+
+.dropdown-section {
+  padding: 0 16px;
+}
+
+.dropdown-section h3 {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #8a96a3;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.dropdown-section .no-recent {
+  font-size: 0.85rem;
+  color: #5f6b7a;
+  margin-bottom: 4px;
+}
+
+.dropdown-divider {
+  border: 0;
+  border-top: 1px solid #3f4754;
+  margin: 10px 0;
+}
+
+.trending-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.trending-list li {
+  margin-bottom: 4px;
+}
+
+.trending-list li a {
+  display: block;
+  text-decoration: none;
+  color: #858a8b;
+  font-size: 0.95rem;
+  padding: 6px 0;
+  transition: color 0.2s ease;
+}
+
+.trending-list li a:hover {
+  color: #4f46e5; 
+}
+
+/* --- GAYA KHUSUS PAGE 2 (KOTAK BERJEJER KE BAWAH DENGAN FOTO) --- */
+.page2-vertical-container {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  max-width: 850px;
+  margin: 4rem auto 4rem auto;
+  padding: 0 1.5rem;
+  width: 100%;
+}
+
+.card-vertical {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box;
+}
+
+.card-vertical:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+}
+
+.card-vertical.header-card {
+  border-left: 5px solid #4f46e5;
+  padding: 40px;
+}
+
+.card-with-img {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.card-img-wrapper {
+  flex: 0 0 220px;
+  height: 160px;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.card-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-text-content {
+  flex: 1;
+}
+
+.card-vertical h2 {
+  font-size: 22px;
+  color: #1f2937;
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.card-vertical p {
+  font-size: 15px;
+  color: #4b5563;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* --- LINK CARD PAGE 2 --- */
+.link-card {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.link-card .card-text-content h2 {
+  color: #1f2937;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.link-card .card-text-content p {
+  color: #4b5563;
+}
+
+.link-card:hover {
+  background-color: #f9fafb;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+}
+
+.link-card:hover .arrow-icon {
+  transform: translateX(6px);
+  color: #4f46e5;
+}
+
+.arrow-icon {
+  display: inline-block;
+  transition: transform 0.2s ease, color 0.2s ease;
+  color: #9ca3af;
+  font-size: 20px;
+}
+
+/* --- GAYA KHUSUS PAGE 4 (GROWTOPIA STYLE FOOTER) --- */
+.gt-footer-section {
+  max-width: 850px;
+  margin: 4rem auto 4rem auto;
+  padding: 0 1.5rem;
+  width: 100%;
+}
+
+.gt-footer-container {
+  background-color: #1c3b2b; 
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.gt-logo-wrapper {
+  margin-bottom: 20px;
+}
+
+.gt-logo-text {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #ffffff; 
+  text-shadow: 2px 2px 0px #000;
+  letter-spacing: -1px;
+}
+
+.gt-logo-accent {
+  color: #ffd700; /* Warna kuning emas accent khas game */
+}
+
+.gt-description {
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 35px;
+  font-weight: 400;
+  max-width: 760px;
+}
+
+.gt-highlight {
+  color: #ffd700;
+  font-weight: 600;
+}
+
+.gt-social-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.gt-icon-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 52px;
+  height: 52px;
+  border: 2px solid #ffffff;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 22px;
+  text-decoration: none;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.gt-icon-btn:hover {
+  transform: scale(1.08);
+  filter: brightness(1.1);
+}
+
+.gt-discord { background-color: #5865F2; }
+.gt-instagram { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+.gt-tiktok { background-color: #000000; }
+.gt-twitch { background-color: #9146FF; }
+.gt-x { background-color: #14171A; }
+.gt-youtube { background-color: #FF0000; }
+.gt-facebook { background-color: #1877F2; }
+
+/* --- LAYOUT UTAMA KATALOG SHOP (GRID 5 KOLOM) --- */
+.shop-page-container {
+  max-width: 1280px;
+  margin: 4rem auto 4rem auto;
+  padding: 0 1.5rem;
+  width: 100%;
+}
+
+.shop-header {
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.shop-header h2 {
+  font-size: 24px;
+  color: #1f2937;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.shop-header p {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.product-grid-5 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+.product-card {
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: unset;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.product-img-box {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  background-color: #e5e5e5; 
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-info {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.brand-name {
+  font-size: 12px;
+  font-weight: 700;
+  color: #4f46e5;
+  letter-spacing: 0.5px;
+}
+
+.product-title {
+  font-size: 13.5px;
+  color: #333;
+  line-height: 1.4;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  height: 38px;
+}
+
+.price-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 5px;
+}
+
+.product-price {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.promo-price {
+  color: #e52e40;
+}
+
+.old-price {
+  font-size: 12px;
+  color: #999999;
+  text-decoration: line-through;
+}
+
+.discount-badge {
+  align-self: flex-start;
+  background-color: #ff0022;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 3px;
+  margin-top: 2px;
+}
+
+/* --- MEDIA QUERIES RESPONSIVE MEDIA --- */
+@media (max-width: 1024px) {
+  .product-grid-5 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .main-header {
+    padding: 1.2rem 5%;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-header {
+    flex-direction: column;
+    gap: 15px;
+    padding: 1rem;
+  }
+  .nav-links {
+    gap: 1.2rem;
+  }
+  .search-container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 650px) {
+  .card-with-img, .link-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .card-img-wrapper {
+    width: 100%;
+    flex: none;
+    height: 200px;
+  }
+}
+
+@media (max-width: 640px) {
+  .product-grid-5 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+}

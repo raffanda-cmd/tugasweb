@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sticky Header & Slider Keren</title>
+  <!-- Gabungan CSS Utama dan Font Awesome ditempatkan dengan benar di dalam HEAD -->
+  <link rel="stylesheet" href="style.css"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="main-header" id="header">
+    <a href="#" class="logo">BUNGA.</a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#" id="btn-home">Home</a></li>
+        <li><a href="#" id="btn-fitur">Wiki</a></li>
+        <li><a href="#" id="btn-harga">Market</a></li>
+        <li><a href="#" id="btn-kontak">Kontak</a></li>
+      </ul>
+    </nav>
+
+    <!-- SEARCH CONTAINER -->
+    <div class="search-container">
+      <span class="search-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      </span>
+      <input type="text" id="search-input" class="search-input" placeholder="Search" autocomplete="off">
+      
+      <!-- DROPDOWN LIST -->
+      <div id="search-dropdown" class="search-dropdown hidden">
+        <div class="dropdown-section" style="margin-top: 10px;">
+          <h3>Recent Searches</h3>
+          <p class="no-recent">No recent searches</p>
+        </div>
+        <hr class="dropdown-divider">
+        <div class="dropdown-section">
+          <h3>Trending searches</h3>
+          <ul class="trending-list">
+            <li><a href="#">mawar</a></li>
+            <li><a href="#">anggrek</a></li>
+            <li><a href="#">lavender</a></li>
+            <li><a href="#">amarilis</a></li>
+            <li><a href="#">lili</a></li>          
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- KONTEN UTAMA -->
+  <main>
+    <!-- HALAMAN 1 (Home) -->
+    <div id="page-1">
+      <section class="hero" id="home">
+        <h1>Situs Web Bunga Anda</h1>
+        <p>Selamat datang di situs bunga, tempat Anda menemukan berbagai informasi tentang tanaman hias yang indah dan menarik.</p>
+      </section>
+
+      <div class="slider-container">
+        <div class="slider">
+          <div class="slide"><img src="matahari.jpg" alt="Foto 1"></div>
+          <div class="slide"><img src="bunga.jpg" alt="Foto 2"></div>
+          <div class="slide"><img src="sakuraa.jpg" alt="Foto 3"></div>
+        </div>
+        <button class="btn btn-prev" id="btn-prev">&#10094;</button>
+        <button class="btn btn-next" id="btn-next">&#10095;</button>
+      </div>
+
+      <section class="content-section" id="intro-harga">
+        <div class="tanaman-header">
+          <h1>Rekomendasi Bunga Tanaman Hias Populer</h1>
+          <p>Beragam tanaman hias yang mudah ditemukan di Indonesia dan cocok ditanam di rumah.</p>
+        </div>
+
+        <div class="container">
+          <div class="grid">
+            <div class="card">
+              <h2>Mawar</h2>
+              <span class="latin">Rosa</span>
+              <p>Simbol keindahan dan romantisme. Cocok ditanam di taman maupun dalam pot besar. Tersedia dalam berbagai warna seperti merah, putih, kuning, dan pink.</p>
+            </div>
+
+            <div class="card">
+              <h2>Anggrek</h2>
+              <span class="latin">Orchidaceae</span>
+              <p>Tanaman hias bunga yang elegan dan tahan lama. Cocok untuk dekorasi rumah mewah maupun area indoor yang terang.</p>
+            </div>
+
+            <div class="card">
+              <h2>Lavender</h2>
+              <span class="latin">Lavandula</span>
+              <p>Selain indah, lavender memiliki aroma yang dapat membantu mengusir nyamuk dan memberikan efek relaksasi.</p>
+            </div>
+
+            <div class="card">
+              <h2>Amarilis</h2>
+              <span class="latin">Hippeastrum</span>
+              <p>Bunga unik berbentuk terompet besar. Sangat cocok ditanam di dalam pot dan ditempatkan di area terang.</p>
+            </div>
+
+            <div class="card">
+              <h2>Lili</h2>
+              <span class="latin">Lilium</span>
+              <p>Bunga berbentuk lonceng dengan aroma lembut. Cocok untuk dekorasi elegan dan tampil mewah di pot keramik.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section video-section" id="preview-video">
+        <h2>Preview Video</h2>
+        <p>Tonton video singkat di bawah ini untuk melihat demo komprehensif dari layanan kami.</p>
+        <div class="video-container">
+          <iframe src="fujifilm.mp4" title="Preview Video" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </section>
+    </div> 
+
+    <!-- HALAMAN 2 (Fitur / Jenis Tanaman dengan Foto) -->
+    <div id="page-2" class="hidden">
+      <div class="page2-vertical-container">
+        <!-- Kotak Header Atas -->
+        <div class="card-vertical header-card">
+          <h2>Jenis-Jenis Bunga Tanaman Hias Populer</h2>
+          <p>Berikut adalah beragam jenis bunga tanaman hias yang populer, mudah ditemukan di Indonesia, dan sangat cocok untuk mempercantik lingkungan rumah Anda.</p>
+        </div>
+
+        <!-- Kartu 1: Mawar -->
+        <a href="https://id.wikipedia.org/wiki/Mawar" target="_blank" class="card-vertical card-with-img link-card">
+          <div class="card-img-wrapper">
+            <img src="mawar(3).jpg" alt="Bunga Mawar">
+          </div>
+          <div class="card-text-content">
+            <h2>Mawar (Rosa) <span class="arrow-icon">&rarr;</span></h2>
+            <p>Simbol keindahan dan romantisme yang abadi. Cocok ditanam di taman terbuka maupun dalam pot besar. Memerlukan penyiraman rutin dan pemangkasan berkala agar bunganya tumbuh lebat dengan warna yang pekat.</p>
+          </div>
+        </a>
+
+        <!-- Kartu 2: Anggrek -->
+        <a href="https://id.wikipedia.org/wiki/Orchidaceae" target="_blank" class="card-vertical card-with-img link-card">
+          <div class="card-img-wrapper">
+            <img src="anggrek(1).jpg" alt="Bunga Anggrek">
+          </div>
+          <div class="card-text-content">
+            <h2>Anggrek (Orchidaceae) <span class="arrow-icon">&rarr;</span></h2>
+            <p>Tanaman hias elegan dengan kelopak bunga yang tahan lama. Anggrek sangat cocok diletakkan di area semi-indoor yang terang namun teduh. Kunci perawatannya adalah menjaga sirkulasi udara dan kelembapan media tanam.</p>
+          </div>
+        </a>
+
+        <!-- Kartu 3: Lavender -->
+        <a href="https://id.wikipedia.org/wiki/Lavender" target="_blank" class="card-vertical card-with-img link-card">
+          <div class="card-img-wrapper">
+            <img src="lavender(3).jpg" alt="Bunga Lavender">
+          </div>
+          <div class="card-text-content">
+            <h2>Lavender (Lavandula) <span class="arrow-icon">&rarr;</span></h2>
+            <p>Selain warnanya yang ungu menawan, lavender terkenal dengan aroma esensialnya yang menenangkan. Aroma alami ini sangat efektif membantu mengusir nyamuk, menjadikannya pilihan tanaman hias terbaik dekat jendela kamar.</p>
+          </div>
+        </a>
+
+        <!-- Kartu 4: Amarilis -->
+        <a href="https://id.wikipedia.org/wiki/Amarilis" target="_blank" class="card-vertical card-with-img link-card">
+          <div class="card-img-wrapper">
+            <img src="amarilis(3).jpg" alt="Bunga Amarilis">
+          </div>
+          <div class="card-text-content">
+            <h2>Amarilis (Hippeastrum) <span class="arrow-icon">&rarr;</span></h2>
+            <p>Memiliki karakteristik bunga berbentuk terompet besar yang mencolok. Tanaman umbi ini sangat menyukai sinar matahari pagi. Menggunakan media tanam yang porous sangat penting untuk mencegah pembusukan akar.</p>
+          </div>
+        </a>
+
+        <!-- Kartu 5: Lili -->
+        <a href="https://id.wikipedia.org/wiki/Lili" target="_blank" class="card-vertical card-with-img link-card">
+          <div class="card-img-wrapper">
+            <img src="lili(3).jpg" alt="Bunga Lili">
+          </div>
+          <div class="card-text-content">
+            <h2>Lili (Lilium) <span class="arrow-icon">&rarr;</span></h2>
+            <p>Bunga indah beraroma lembut yang melambangkan kesucian. Tampil sangat mewah saat ditanam di pot keramik minimalis. Pastikan media tanam lembap namun tidak tergenang air agar pertumbuhan umbinya maksimal.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- HALAMAN 3 (Katalog Diskon Bunga - Grid 5 Kolom) -->
+    <div id="page-3" class="hidden">
+      <div class="shop-page-container">
+        <!-- Header Halaman Katalog -->
+        <div class="shop-header">
+          <h2>Promo Spesial Koleksi Bunga</h2>
+          <p>Dapatkan penawaran harga terbaik untuk tanaman hias favorit Anda hari ini.</p>
+        </div>
+
+        <!-- Grid Produk Berjejer Menyamping -->
+        <div class="product-grid-5">
+          <!-- Produk 1 -->
+          <a href="https://url-shortener.me/NM6Z" target="_blank" class="product-card">
+            <div class="product-img-box">
+              <img src="mawar(3).jpg" alt="Bunga Mawar">
+            </div>
+            <div class="product-info">
+              <span class="brand-name">MAWAR</span>
+              <p class="product-title">Rosa - Tanaman Hias Bunga Mawar Cantik</p>
+              <div class="price-container">
+                <span class="product-price promo-price">Rp 67.915</span>
+                <span class="old-price">Rp 79.900</span>
+                <span class="discount-badge">-15% OFF</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Produk 2 -->
+          <a href="https://url-shortener.me/NM6Y" target="_blank" class="product-card">
+            <div class="product-img-box">
+              <img src="anggrek(1).jpg" alt="Bunga Anggrek">
+            </div>
+            <div class="product-info">
+              <span class="brand-name">ANGGREK</span>
+              <p class="product-title">Orchidaceae - Anggrek Premium Eksklusif</p>
+              <div class="price-container">
+                <span class="product-price promo-price">Rp 74.925</span>
+                <span class="old-price">Rp 99.900</span>
+                <span class="discount-badge">-25% OFF</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Produk 3 -->
+          <a href="https://url-shortener.me/NM73" target="_blank" class="product-card">
+            <div class="product-img-box">
+              <img src="lavender(3).jpg" alt="Bunga Lavender">
+            </div>
+            <div class="product-info">
+              <span class="brand-name">LAVENDER</span>
+              <p class="product-title">Lavandula - Lavender Aromaterapi Pengusir Nyamuk</p>
+              <div class="price-container">
+                <span class="product-price promo-price">Rp 39.950</span>
+                <span class="old-price">Rp 79.900</span>
+                <span class="discount-badge">-50% OFF</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Produk 4 -->
+          <a href="https://url-shortener.me/NM74" target="_blank" class="product-card">
+            <div class="product-img-box">
+              <img src="amarilis(3).jpg" alt="Bunga Amarilis">
+            </div>
+            <div class="product-info">
+              <span class="brand-name">AMARILIS</span>
+              <p class="product-title">Hippeastrum - Bunga Amarilis Jingga Menawan</p>
+              <div class="price-container">
+                <span class="product-price promo-price">Rp 123.405</span>
+                <span class="old-price">Rp 129.900</span>
+                <span class="discount-badge">-5% OFF</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Produk 5 -->
+          <a href="https://url-shortener.me/NM77" target="_blank" class="product-card">
+            <div class="product-img-box">
+              <img src="lili(3).jpg" alt="Bunga Lili">
+            </div>
+            <div class="product-info">
+              <span class="brand-name">LILIUM</span>
+              <p class="product-title">Lilium - Bunga Lili Putih Bersih Elegan</p>
+              <div class="price-container">
+                <span class="product-price promo-price">Rp 82.445</span>
+                <span class="old-price">Rp 149.900</span>
+                <span class="discount-badge">-45% OFF</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- HALAMAN 4 (Social Media Footer) -->
+    <div id="page-4" class="hidden">
+      <section class="gt-footer-section">
+        <div class="gt-footer-container">
+          <div class="gt-logo-wrapper">
+            <span class="gt-logo-text">Social <span class="gt-logo-accent">Media</span></span>
+          </div>
+          <p class="gt-description">
+            <span class="gt-highlight">Kontak</span> kami jika terdapat kendala atau pertanyaan. Kami selalu siap membantu Anda dengan layanan terbaik.
+          </p>
+          <div class="gt-social-grid">
+            <a href="#" class="gt-icon-btn gt-discord" title="Discord"><i class="fa-brands fa-discord"></i></a>
+            <a href="#" class="gt-icon-btn gt-instagram" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="gt-icon-btn gt-tiktok" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="#" class="gt-icon-btn gt-twitch" title="Twitch"><i class="fa-brands fa-twitch"></i></a>
+            <a href="#" class="gt-icon-btn gt-x" title="X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" class="gt-icon-btn gt-youtube" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#" class="gt-icon-btn gt-facebook" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // 1. Sticky Header
+      const header = document.getElementById('header');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      });
+
+      // 2. Slider Carousel
+      let indeksSlide = 0;
+      const slides = document.querySelectorAll('.slide');
+      const totalSlides = slides.length;
+      const slider = document.querySelector('.slider');
+      const btnPrev = document.getElementById('btn-prev');
+      const btnNext = document.getElementById('btn-next');
+      let intervalSlide;
+
+      function updateSlide() {
+        slider.style.transform = `translateX(${-indeksSlide * 100}%)`;
+      }
+
+      function geserSlide(arah) {
+        indeksSlide += arah;
+        if (indeksSlide >= totalSlides) { indeksSlide = 0; }
+        if (indeksSlide < 0) { indeksSlide = totalSlides - 1; }
+        updateSlide();
+      }
+
+      function mulaiAutoplay() {
+        intervalSlide = setInterval(() => {
+          geserSlide(1);
+        }, 3000);
+      }
+
+      function resetAutoplay() {
+        clearInterval(intervalSlide);
+        mulaiAutoplay();
+      }
+
+      btnPrev.addEventListener('click', () => { geserSlide(-1); resetAutoplay(); });
+      btnNext.addEventListener('click', () => { geserSlide(1); resetAutoplay(); });
+
+      mulaiAutoplay();
+
+      // 3. Multi-Page Navigation
+      const btnHome = document.getElementById('btn-home');
+      const btnFitur = document.getElementById('btn-fitur');
+      const btnHarga = document.getElementById('btn-harga');
+      const btnKontak = document.getElementById('btn-kontak');
+
+      const semuaHalaman = [
+        document.getElementById('page-1'),
+        document.getElementById('page-2'),
+        document.getElementById('page-3'),
+        document.getElementById('page-4')
+      ];
+
+      function tampilkanHalaman(indeksTarget) {
+        semuaHalaman.forEach((halaman, indeks) => {
+          if (indeks === indeksTarget) {
+            halaman.classList.remove('hidden');
+          } else {
+            halaman.classList.add('hidden');
+          }
+        });
+        window.scrollTo(0, 0);
+      }
+
+      btnHome.addEventListener('click', function(e) { e.preventDefault(); tampilkanHalaman(0); });
+      btnFitur.addEventListener('click', function(e) { e.preventDefault(); tampilkanHalaman(1); });
+      btnHarga.addEventListener('click', function(e) { e.preventDefault(); tampilkanHalaman(2); });
+      btnKontak.addEventListener('click', function(e) { e.preventDefault(); tampilkanHalaman(3); });
+
+      // 4. Search Dropdown
+      const searchInput = document.getElementById('search-input');
+      const searchDropdown = document.getElementById('search-dropdown');
+
+      searchInput.addEventListener('focus', function() {
+        searchDropdown.classList.remove('hidden');
+      });
+
+      document.addEventListener('click', function(e) {
+        const diDalamAreaSearch = e.target.closest('.search-container');
+        if (!diDalamAreaSearch) {
+          searchDropdown.classList.add('hidden');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
